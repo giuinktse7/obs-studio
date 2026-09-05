@@ -9,6 +9,7 @@ struct vk_inst_funcs {
 	DEF_FUNC(DestroySurfaceKHR);
 	DEF_FUNC(GetPhysicalDeviceQueueFamilyProperties);
 	DEF_FUNC(GetPhysicalDeviceMemoryProperties);
+	DEF_FUNC(GetPhysicalDeviceProperties2);
 	DEF_FUNC(GetPhysicalDeviceImageFormatProperties2);
 	DEF_FUNC(EnumerateDeviceExtensionProperties);
 };
@@ -20,6 +21,7 @@ struct vk_device_funcs {
 	DEF_FUNC(DestroySwapchainKHR);
 	DEF_FUNC(QueuePresentKHR);
 	DEF_FUNC(AllocateMemory);
+	DEF_FUNC(GetMemoryWin32HandlePropertiesKHR);
 	DEF_FUNC(FreeMemory);
 	DEF_FUNC(BindImageMemory);
 	DEF_FUNC(BindImageMemory2);
@@ -35,6 +37,8 @@ struct vk_device_funcs {
 	DEF_FUNC(CmdPipelineBarrier);
 	DEF_FUNC(GetDeviceQueue);
 	DEF_FUNC(QueueSubmit);
+	DEF_FUNC(CreateSemaphore);
+	DEF_FUNC(DestroySemaphore);
 	DEF_FUNC(CreateCommandPool);
 	DEF_FUNC(DestroyCommandPool);
 	DEF_FUNC(AllocateCommandBuffers);
