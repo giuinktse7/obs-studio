@@ -48,6 +48,7 @@ struct vk_swap_data {
 	bool layout_initialized;
 	VkDeviceMemory export_mem;
 	VkImage *swap_images;
+	VkSemaphore *present_semaphores;
 	uint32_t image_count;
 
 	HANDLE handle;
@@ -606,11 +607,53 @@ static inline bool vk_shtex_init_d3d11(struct vk_data *data)
 		return false;
 	}
 
-	hr = IDXGIFactory1_EnumAdapters1(factory, 0, &adapter);
+	struct vk_inst_funcs *ifuncs = get_inst_funcs_by_physical_device(data->phy_device);
+	VkPhysicalDeviceIDProperties ids = {0};
+	ids.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ID_PROPERTIES;
+	VkPhysicalDeviceProperties2 properties = {0};
+	properties.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2;
+	properties.pNext = &ids;
+	ifuncs->GetPhysicalDeviceProperties2(data->phy_device, &properties);
+
+	if (!ids.deviceLUIDValid) {
+		flog("Vulkan device has no valid Windows LUID");
+		IDXGIFactory1_Release(factory);
+		return false;
+	}
+
+	/* DXGI enumeration order need not match the captured Vulkan GPU. */
+	adapter = NULL;
+	for (UINT index = 0;; index++) {
+		IDXGIAdapter1 *candidate;
+		hr = IDXGIFactory1_EnumAdapters1(factory, index, &candidate);
+		if (hr == DXGI_ERROR_NOT_FOUND)
+			break;
+
+		if (FAILED(hr)) {
+			flog_hr("failed to enumerate adapters", hr);
+			break;
+		}
+
+		DXGI_ADAPTER_DESC1 desc;
+		hr = IDXGIAdapter1_GetDesc1(candidate, &desc);
+		if (SUCCEEDED(hr) && memcmp(&desc.AdapterLuid, ids.deviceLUID, VK_LUID_SIZE) == 0) {
+			adapter = candidate;
+			flog("matched Vulkan device %s to DXGI adapter %u, LUID %08lx:%08lx",
+			     properties.properties.deviceName, index, (unsigned long)desc.AdapterLuid.HighPart,
+			     (unsigned long)desc.AdapterLuid.LowPart);
+			break;
+		}
+
+		IDXGIAdapter1_Release(candidate);
+		if (FAILED(hr)) {
+			flog_hr("failed to query adapter description", hr);
+			break;
+		}
+	}
 	IDXGIFactory1_Release(factory);
 
-	if (FAILED(hr)) {
-		flog_hr("failed to create adapter", hr);
+	if (!adapter) {
+		flog("no DXGI adapter matches the captured Vulkan device LUID");
 		return false;
 	}
 
@@ -789,6 +832,25 @@ static inline bool vk_shtex_init_vulkan_tex(struct vk_data *data, struct vk_swap
 		imw32hi.pNext = &mdai;
 	}
 
+	VkMemoryWin32HandlePropertiesKHR handle_props = {0};
+	handle_props.sType = VK_STRUCTURE_TYPE_MEMORY_WIN32_HANDLE_PROPERTIES_KHR;
+	res = funcs->GetMemoryWin32HandlePropertiesKHR(device, imw32hi.handleType, swap->handle, &handle_props);
+	if (res != VK_SUCCESS) {
+		flog("failed to query shared texture handle properties: %s (%d)", result_to_str(res), (int)res);
+		funcs->DestroyImage(device, swap->export_image, data->ac);
+		swap->export_image = VK_NULL_HANDLE;
+		return false;
+	}
+
+	/* Both the image and the imported allocation constrain the memory type. */
+	mr.memoryTypeBits &= handle_props.memoryTypeBits;
+	if (!mr.memoryTypeBits) {
+		flog("shared texture handle has no memory type compatible with the Vulkan image");
+		funcs->DestroyImage(device, swap->export_image, data->ac);
+		swap->export_image = VK_NULL_HANDLE;
+		return false;
+	}
+
 	bool allocated = false;
 	for (uint32_t i = 0; i < pdmp.memoryTypeCount; ++i) {
 		if ((mr.memoryTypeBits & (1 << i)) &&
@@ -956,8 +1018,8 @@ static void vk_shtex_destroy_frame_objects(struct vk_data *data, struct vk_queue
 	queue_data->frame_count = 0;
 }
 
-static void vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs, struct vk_swap_data *swap,
-			     uint32_t idx, VkQueue queue, const VkPresentInfoKHR *info)
+static VkResult vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs, struct vk_swap_data *swap,
+				 uint32_t idx, VkQueue queue, const VkPresentInfoKHR *info, VkSemaphore *present_wait)
 {
 	VkResult res = VK_SUCCESS;
 
@@ -976,6 +1038,21 @@ static void vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs
 
 	const uint32_t image_index = info->pImageIndices[idx];
 	VkImage cur_backbuffer = swap->swap_images[image_index];
+	if (!swap->present_semaphores)
+		return VK_ERROR_OUT_OF_HOST_MEMORY;
+
+	/* Reacquisition and the application's render-complete wait order reuse
+	 * after the previous presentation of this image consumed the semaphore.
+	 * Keep these alive across capture stop/start, until swapchain destruction. */
+	VkSemaphore *completion = &swap->present_semaphores[image_index];
+	if (*completion == VK_NULL_HANDLE) {
+		VkSemaphoreCreateInfo semaphore_info = {0};
+		semaphore_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
+
+		res = funcs->CreateSemaphore(data->device, &semaphore_info, NULL, completion);
+		if (res != VK_SUCCESS)
+			return res;
+	}
 
 	struct vk_queue_data *queue_data = get_queue_data(data, queue);
 	uint32_t fam_idx = queue_data->fam_idx;
@@ -995,6 +1072,8 @@ static void vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs
 	VkDevice device = data->device;
 
 	res = funcs->ResetCommandPool(device, frame_data->cmd_pool, 0);
+	if (res != VK_SUCCESS)
+		return res;
 
 #ifdef MORE_DEBUGGING
 	debug_res("ResetCommandPool", res);
@@ -1002,6 +1081,8 @@ static void vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs
 
 	const VkCommandBuffer cmd_buffer = frame_data->cmd_buffer;
 	res = funcs->BeginCommandBuffer(cmd_buffer, &begin_info);
+	if (res != VK_SUCCESS)
+		return res;
 
 #ifdef MORE_DEBUGGING
 	debug_res("BeginCommandBuffer", res);
@@ -1069,8 +1150,8 @@ static void vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs
 	dst_mb->subresourceRange.baseArrayLayer = 0;
 	dst_mb->subresourceRange.layerCount = 1;
 
-	funcs->CmdPipelineBarrier(cmd_buffer, VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT, VK_PIPELINE_STAGE_TRANSFER_BIT, 0,
-				  0, NULL, 0, NULL, 2, mb);
+	funcs->CmdPipelineBarrier(cmd_buffer, VK_PIPELINE_STAGE_ALL_COMMANDS_BIT, VK_PIPELINE_STAGE_TRANSFER_BIT, 0, 0,
+				  NULL, 0, NULL, 2, mb);
 
 	/* ------------------------------------------------------ */
 	/* copy cur_backbuffer's content to our interop image     */
@@ -1118,30 +1199,45 @@ static void vk_shtex_capture(struct vk_data *data, struct vk_device_funcs *funcs
 				  VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT | VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT, 0, 0, NULL,
 				  0, NULL, 2, mb);
 
-	funcs->EndCommandBuffer(cmd_buffer);
+	res = funcs->EndCommandBuffer(cmd_buffer);
+	if (res != VK_SUCCESS)
+		return res;
 
 	/* ------------------------------------------------------ */
 
 	VkSubmitInfo submit_info;
 	submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
 	submit_info.pNext = NULL;
-	submit_info.waitSemaphoreCount = 0;
-	submit_info.pWaitSemaphores = NULL;
-	submit_info.pWaitDstStageMask = NULL;
+
+	VkPipelineStageFlags *wait_stages = NULL;
+	if (info->waitSemaphoreCount) {
+		wait_stages = _malloca(sizeof(*wait_stages) * info->waitSemaphoreCount);
+		for (uint32_t i = 0; i < info->waitSemaphoreCount; i++)
+			wait_stages[i] = VK_PIPELINE_STAGE_ALL_COMMANDS_BIT;
+	}
+
+	submit_info.waitSemaphoreCount = info->waitSemaphoreCount;
+	submit_info.pWaitSemaphores = info->pWaitSemaphores;
+	submit_info.pWaitDstStageMask = wait_stages;
 	submit_info.commandBufferCount = 1;
 	submit_info.pCommandBuffers = &cmd_buffer;
-	submit_info.signalSemaphoreCount = 0;
-	submit_info.pSignalSemaphores = NULL;
+	submit_info.signalSemaphoreCount = 1;
+	submit_info.pSignalSemaphores = completion;
 
 	const VkFence fence = frame_data->fence;
 	res = funcs->QueueSubmit(queue, 1, &submit_info, fence);
+	if (wait_stages)
+		_freea(wait_stages);
 
 #ifdef MORE_DEBUGGING
 	debug_res("QueueSubmit", res);
 #endif
 
-	if (res == VK_SUCCESS)
+	if (res == VK_SUCCESS) {
 		frame_data->cmd_buffer_busy = true;
+		*present_wait = *completion;
+	}
+	return res;
 }
 
 static inline bool valid_rect(struct vk_swap_data *swap)
@@ -1149,7 +1245,7 @@ static inline bool valid_rect(struct vk_swap_data *swap)
 	return !!swap->image_extent.width && !!swap->image_extent.height;
 }
 
-static void vk_capture(struct vk_data *data, VkQueue queue, const VkPresentInfoKHR *info)
+static VkResult vk_capture(struct vk_data *data, VkQueue queue, const VkPresentInfoKHR *info, VkSemaphore *present_wait)
 {
 	struct vk_swap_data *swap = NULL;
 	HWND window = NULL;
@@ -1174,7 +1270,7 @@ static void vk_capture(struct vk_data *data, VkQueue queue, const VkPresentInfoK
 	}
 
 	if (!window) {
-		return;
+		return VK_SUCCESS;
 	}
 
 	if (capture_should_stop()) {
@@ -1190,11 +1286,12 @@ static void vk_capture(struct vk_data *data, VkQueue queue, const VkPresentInfoK
 	if (capture_ready()) {
 		if (swap != data->cur_swap) {
 			vk_shtex_free(data);
-			return;
+			return VK_SUCCESS;
 		}
 
-		vk_shtex_capture(data, &data->funcs, swap, idx, queue, info);
+		return vk_shtex_capture(data, &data->funcs, swap, idx, queue, info, present_wait);
 	}
+	return VK_SUCCESS;
 }
 
 static VkResult VKAPI_CALL OBS_QueuePresentKHR(VkQueue queue, const VkPresentInfoKHR *info)
@@ -1203,8 +1300,21 @@ static VkResult VKAPI_CALL OBS_QueuePresentKHR(VkQueue queue, const VkPresentInf
 	struct vk_queue_data *const queue_data = get_queue_data(data, queue);
 	struct vk_device_funcs *const funcs = &data->funcs;
 
+	VkSemaphore present_wait = VK_NULL_HANDLE;
+	VkPresentInfoKHR capture_present = *info;
 	if (data->valid && queue_data->supports_transfer) {
-		vk_capture(data, queue, info);
+		VkResult capture_result = vk_capture(data, queue, info, &present_wait);
+		if (capture_result != VK_SUCCESS) {
+			flog("capture submission failed: %s (%d)", result_to_str(capture_result), (int)capture_result);
+			return capture_result;
+		}
+	}
+	if (present_wait != VK_NULL_HANDLE) {
+		/* The copy consumed the original binary waits. Preserve pNext and
+		 * pResults while replacing only the wait list for the whole batch. */
+		capture_present.waitSemaphoreCount = 1;
+		capture_present.pWaitSemaphores = &present_wait;
+		info = &capture_present;
 	}
 
 	if (vk_presenting != 0) {
@@ -1318,6 +1428,7 @@ static VkResult VKAPI_CALL OBS_CreateInstance(const VkInstanceCreateInfo *cinfo,
 	GETADDR(DestroySurfaceKHR);
 	GETADDR(GetPhysicalDeviceQueueFamilyProperties);
 	GETADDR(GetPhysicalDeviceMemoryProperties);
+	GETADDR(GetPhysicalDeviceProperties2);
 	GETADDR(GetPhysicalDeviceImageFormatProperties2);
 	GETADDR(EnumerateDeviceExtensionProperties);
 #undef GETADDR
@@ -1430,7 +1541,46 @@ static VkResult VKAPI_CALL OBS_CreateDevice(VkPhysicalDevice phy_device, const V
 
 	PFN_vkCreateDevice createFunc = (PFN_vkCreateDevice)gipa(idata->instance, "vkCreateDevice");
 
-	ret = createFunc(phy_device, info, ac, p_device);
+	/* The handle-properties query requires the extension to be enabled on
+	 * the device, not merely advertised by the physical device. */
+	VkDeviceCreateInfo capture_info = *info;
+	const char **capture_extensions = NULL;
+	bool external_memory_enabled = false;
+	for (uint32_t i = 0; i < info->enabledExtensionCount; i++) {
+		if (!strcmp(info->ppEnabledExtensionNames[i], VK_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME))
+			external_memory_enabled = true;
+	}
+
+	if (!external_memory_enabled) {
+		uint32_t count = 0;
+		if (ifuncs->EnumerateDeviceExtensionProperties(phy_device, NULL, &count, NULL) == VK_SUCCESS) {
+			VkExtensionProperties *extensions = _malloca(sizeof(*extensions) * count);
+
+			if (ifuncs->EnumerateDeviceExtensionProperties(phy_device, NULL, &count, extensions) ==
+			    VK_SUCCESS) {
+				for (uint32_t i = 0; i < count; i++) {
+					if (!strcmp(extensions[i].extensionName,
+						    VK_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME)) {
+						capture_extensions = _malloca(sizeof(*capture_extensions) *
+									      (info->enabledExtensionCount + 1));
+
+						for (uint32_t j = 0; j < info->enabledExtensionCount; j++)
+							capture_extensions[j] = info->ppEnabledExtensionNames[j];
+
+						capture_extensions[info->enabledExtensionCount] =
+							VK_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME;
+						capture_info.enabledExtensionCount++;
+						capture_info.ppEnabledExtensionNames = capture_extensions;
+						break;
+					}
+				}
+			}
+			_freea(extensions);
+		}
+	}
+	ret = createFunc(phy_device, &capture_info, ac, p_device);
+	if (capture_extensions)
+		_freea(capture_extensions);
 	if (ret != VK_SUCCESS) {
 		vk_free(ac, data);
 		return ret;
@@ -1468,6 +1618,7 @@ static VkResult VKAPI_CALL OBS_CreateDevice(VkPhysicalDevice phy_device, const V
 	GETADDR(DestroySwapchainKHR);
 	GETADDR(QueuePresentKHR);
 	GETADDR(AllocateMemory);
+	GETADDR(GetMemoryWin32HandlePropertiesKHR);
 	GETADDR(FreeMemory);
 	GETADDR(BindImageMemory);
 	GETADDR(BindImageMemory2);
@@ -1483,6 +1634,8 @@ static VkResult VKAPI_CALL OBS_CreateDevice(VkPhysicalDevice phy_device, const V
 	GETADDR(CmdPipelineBarrier);
 	GETADDR(GetDeviceQueue);
 	GETADDR(QueueSubmit);
+	GETADDR(CreateSemaphore);
+	GETADDR(DestroySemaphore);
 	GETADDR(CreateCommandPool);
 	GETADDR(DestroyCommandPool);
 	GETADDR(AllocateCommandBuffers);
@@ -1659,6 +1812,13 @@ static VkResult VKAPI_CALL OBS_CreateSwapchainKHR(VkDevice device, const VkSwapc
 				swap_data->layout_initialized = false;
 				swap_data->export_mem = VK_NULL_HANDLE;
 				swap_data->image_count = count;
+				swap_data->present_semaphores = vk_alloc(ac, count * sizeof(VkSemaphore),
+									 _Alignof(VkSemaphore),
+									 VK_SYSTEM_ALLOCATION_SCOPE_OBJECT);
+
+				if (swap_data->present_semaphores)
+					memset(swap_data->present_semaphores, 0, count * sizeof(VkSemaphore));
+
 				swap_data->handle = INVALID_HANDLE_VALUE;
 				swap_data->shtex_info = NULL;
 				swap_data->d3d11_tex = NULL;
@@ -1945,6 +2105,13 @@ static void VKAPI_CALL OBS_DestroySwapchainKHR(VkDevice device, VkSwapchainKHR s
 				vk_shtex_free(data);
 			}
 
+			/* The application must finish outstanding uses before destroying
+			 * this swapchain, including its presentation operations. */
+			for (uint32_t i = 0; swap->present_semaphores && i < swap->image_count; i++) {
+				if (swap->present_semaphores[i])
+					funcs->DestroySemaphore(device, swap->present_semaphores[i], NULL);
+			}
+			vk_free(ac, swap->present_semaphores);
 			vk_free(ac, swap->swap_images);
 
 			remove_free_swap_data(data, sc, ac);
