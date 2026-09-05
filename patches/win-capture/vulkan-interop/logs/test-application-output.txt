@@ -1,0 +1,6 @@
+$  env -u DISABLE_VULKAN_OBS_CAPTURE -u VK_LOADER_LAYERS_DISABLE \
+    ./build/debug/test-application.exe 2>&1 \
+    | tee build/debug/test-application-obs-sync.log
+Vulkan adapter: name=NVIDIA GeForce RTX 4070, PCI ID=10de:2786, type=DISCRETE_GPU
+Vulkan adapter API: 1.4.325; driver: id=NVIDIA_PROPRIETARY, name=NVIDIA, info=591.86, raw_version=0x93d58000
+Vulkan adapter Windows LUID: 00000000:0000fb9a; node_mask=0x00000001; raw=9afb000000000000

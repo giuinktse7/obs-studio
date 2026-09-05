@@ -1,0 +1,75 @@
+14:01:21.054: User Removed source 'Game Capture' (game_capture) from scene 'Scene'
+14:01:23.630: User added source 'Game Capture' (game_capture) to scene 'Scene'
+14:01:26.803: [game-capture: 'Game Capture'] attempting to hook process: test-application.exe
+14:01:26.813: [game-capture: 'Game Capture'] vk_shtex_init_d3d11: matched Vulkan device NVIDIA GeForce RTX 4070 to DXGI adapter 1, LUID 00000000:0000fb9a
+14:01:26.826: [game-capture: 'Game Capture'] Hooked ID3D12CommandQueue::ExecuteCommandLists
+14:01:26.826: [game-capture: 'Game Capture'] Hooked D3D12
+14:01:26.826: [game-capture: 'Game Capture'] Hooked IDXGISwapChain::Present
+14:01:26.826: [game-capture: 'Game Capture'] Hooked IDXGISwapChain::ResizeBuffers
+14:01:26.826: [game-capture: 'Game Capture'] Hooked IDXGISwapChain1::Present1
+14:01:26.826: [game-capture: 'Game Capture'] Hooked DXGI
+14:01:26.830: [game-capture: 'Game Capture'] vk_shtex_init_d3d11_tex: OBS requesting VK_FORMAT_B8G8R8A8_SRGB texture format. capture dimensions: 1536x976
+14:01:26.830: [game-capture: 'Game Capture'] vulkan shared texture capture successful
+14:01:26.831: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:26.836: [game-capture: 'Game Capture'] shared texture capture successful
+14:01:30.838: [game-capture: 'Game Capture'] Hooked SwapBuffers
+14:01:30.838: [game-capture: 'Game Capture'] Hooked wglDeleteContext
+14:01:30.838: [game-capture: 'Game Capture'] Hooked wglSwapLayerBuffers
+14:01:30.838: [game-capture: 'Game Capture'] Hooked wglSwapBuffers
+14:01:30.839: [game-capture: 'Game Capture'] Hooked GL
+14:01:30.851: [obs-nvenc: 'simple_video_recording'] settings:
+14:01:30.851: 	codec:        H264
+14:01:30.851: 	rate_control: CQP
+14:01:30.851: 	cqp:          23
+14:01:30.851: 	keyint:       250
+14:01:30.851: 	preset:       p5
+14:01:30.851: 	tuning:       hq
+14:01:30.851: 	multipass:    qres
+14:01:30.851: 	profile:      high
+14:01:30.851: 	width:        1920
+14:01:30.851: 	height:       1080
+14:01:30.851: 	b-frames:     2
+14:01:30.851: 	b-ref-mode:   0
+14:01:30.851: 	lookahead:    true (8 frames)
+14:01:30.851: 	aq:           true
+14:01:30.851: 
+14:01:30.881: ---------------------------------
+14:01:30.881: [FFmpeg aac encoder: 'simple_aac_recording0'] bitrate: 192, channels: 2, channel_layout: stereo, track: 1
+14:01:30.881: 
+14:01:30.885: ==== Recording Start ===============================================
+14:01:30.885: [mp4 output: 'simple_file_output'] Writing Hybrid MP4/MOV file 'C:/Users/<user>/Videos/2026-09-05 14-01-30.mp4'...
+14:01:32.478: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:33.366: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:33.483: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:33.850: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:35.466: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:35.475: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:35.569: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:35.806: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:35.949: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:39.477: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:39.587: [game-capture: 'Game Capture'] ------------------ vulkan capture freed ------------------
+14:01:39.588: [game-capture: 'Game Capture'] vk_shtex_init_d3d11: matched Vulkan device NVIDIA GeForce RTX 4070 to DXGI adapter 1, LUID 00000000:0000fb9a
+14:01:39.601: [game-capture: 'Game Capture'] vk_shtex_init_d3d11_tex: OBS requesting VK_FORMAT_B8G8R8A8_SRGB texture format. capture dimensions: 1812x1005
+14:01:39.601: [game-capture: 'Game Capture'] vulkan shared texture capture successful
+14:01:39.603: [game-capture: 'Game Capture'] shared texture capture successful
+14:01:39.713: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:39.732: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:39.831: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:39.938: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:40.029: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:40.480: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:40.512: [game-capture: 'Game Capture'] Remembering D3D12 queue from first direct submit after present: queue=0x1309B866610
+14:01:41.936: [game-capture: 'Game Capture'] ------------------ vulkan capture freed ------------------
+14:01:41.986: [game-capture: 'Game Capture'] capture window no longer exists, terminating capture
+14:01:41.986: [game-capture: 'Game Capture'] capture stopped
+14:01:43.037: [mp4 muxer: 'simple_file_output'] Flushing final fragment...
+14:01:43.037: [mp4 muxer: 'simple_file_output'] Number of fragments: 3
+14:01:43.037: [mp4 muxer: 'simple_file_output'] Full moov size: 11 KiB
+14:01:43.037: [mp4 muxer: 'simple_file_output'] Final mdat size: 1162 KiB
+14:01:43.037: Output 'simple_file_output': stopping
+14:01:43.037: Output 'simple_file_output': Total frames output: 713
+14:01:43.037: Output 'simple_file_output': Total drawn frames: 730
+14:01:43.037: [mp4 output: 'simple_file_output'] Waiting for file writer to finish...
+14:01:43.038: [mp4 output: 'simple_file_output'] File output complete. Finalization took 1 ms.
+14:01:43.039: ==== Recording Stop ================================================

@@ -1,0 +1,28 @@
+$  env -u DISABLE_VULKAN_OBS_CAPTURE -u VK_LOADER_LAYERS_DISABLE \
+    ./build/debug/obs_capture_repro.exe --case unorm 2>&1 \
+    | tee build/debug/repro-obs-sync.log
+Vulkan candidate: name=Intel(R) UHD Graphics 770, PCI ID=8086:a780, type=INTEGRATED_GPU, API=1.4.323
+Vulkan candidate: name=Microsoft Direct3D12 (Intel(R) UHD Graphics 770), PCI ID=8086:a780, type=INTEGRATED_GPU, API=1.2.359
+Vulkan candidate rejected: name=Microsoft Direct3D12 (Intel(R) UHD Graphics 770), reason=Vulkan 1.3 unavailable
+Vulkan candidate: name=NVIDIA GeForce RTX 4070, PCI ID=10de:2786, type=DISCRETE_GPU, API=1.4.325
+Vulkan candidate: name=Microsoft Direct3D12 (NVIDIA GeForce RTX 4070), PCI ID=10de:2786, type=DISCRETE_GPU, API=1.2.359
+Vulkan candidate rejected: name=Microsoft Direct3D12 (NVIDIA GeForce RTX 4070), reason=Vulkan 1.3 unavailable
+Vulkan candidate: name=Microsoft Direct3D12 (Microsoft Basic Render Driver), PCI ID=1414:008c, type=CPU, API=1.2.359
+Vulkan candidate rejected: name=Microsoft Direct3D12 (Microsoft Basic Render Driver), reason=Vulkan 1.3 unavailable
+Selected Vulkan adapter: name=NVIDIA GeForce RTX 4070, PCI ID=10de:2786, API=1.4.325, driver=NVIDIA (591.86)
+Selected Vulkan adapter LUID: 00000000:0000fb9a, node_mask=0x00000001
+Requested case: unorm
+Vulkan API: 1.3; validation: enabled; synchronization validation: enabled
+Device extensions: VK_KHR_swapchain
+Requested swapchain format: B8G8R8A8_UNORM; color space: SRGB_NONLINEAR
+Extent policy: exact window extent
+Presentation fences: disabled
+Excluded: deferred retirement
+Determine the OBS capture backend from the matching OBS log
+Start OBS Game Capture, then repeatedly resize and release the window; close the window to finish
+Swapchain generation 1: active_case=unorm, format=B8G8R8A8_UNORM, window=1280x720, swapchain=1280x720, images=3, present=FIFO, scaling=none
+Swapchain generation 2: active_case=unorm, format=B8G8R8A8_UNORM, window=856x493, swapchain=856x493, images=3, present=FIFO, scaling=none
+Swapchain generation 3: active_case=unorm, format=B8G8R8A8_UNORM, window=973x607, swapchain=973x607, images=3, present=FIFO, scaling=none
+Swapchain generation 4: active_case=unorm, format=B8G8R8A8_UNORM, window=973x789, swapchain=973x789, images=3, present=FIFO, scaling=none
+Swapchain generation 5: active_case=unorm, format=B8G8R8A8_UNORM, window=973x511, swapchain=973x511, images=3, present=FIFO, scaling=none
+Swapchain generation 6: active_case=unorm, format=B8G8R8A8_UNORM, window=973x511, swapchain=973x511, images=3, present=FIFO, scaling=none

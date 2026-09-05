@@ -1,0 +1,489 @@
+[Vulkan Loader] INFO:           Using Vulkan Loader C:\WINDOWS\SYSTEM32\vulkan-1.dll
+[Vulkan Loader] INFO:           Vulkan Loader Version 1.4.357
+[Vulkan Loader] INFO:           No valid vk_loader_settings.json file found, no loader settings will be active
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] DRIVER:         Searching for driver manifest files
+[Vulkan Loader] DRIVER:            In following locations:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] DRIVER:            Found the following files:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] DRIVER:         Checking for Driver Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json" from PnP registry: E
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] DRIVER:         Found no registry files in HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x64\vulkan_dzn.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x86\vulkan_dzn.dll
+[Vulkan Loader] INFO:           loader_parse_icd_manifest: Driver library architecture doesn't match the current running architecture, skipping this driver
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json, version 1.0.0
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\igvk64.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\nvoglv64.dll
+[Vulkan Loader] DRIVER:         Searching for driver manifest files
+[Vulkan Loader] DRIVER:            In following locations:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] DRIVER:            Found the following files:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] DRIVER:         Checking for Driver Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json" from PnP registry: E
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] DRIVER:         Found no registry files in HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x64\vulkan_dzn.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x86\vulkan_dzn.dll
+[Vulkan Loader] INFO:           loader_parse_icd_manifest: Driver library architecture doesn't match the current running architecture, skipping this driver
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json, version 1.0.0
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\igvk64.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\nvoglv64.dll
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           No valid vk_loader_settings.json file found, no loader settings will be active
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] DRIVER:         Searching for driver manifest files
+[Vulkan Loader] DRIVER:            In following locations:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] DRIVER:            Found the following files:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] DRIVER:         Checking for Driver Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json" from PnP registry: E
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] DRIVER:         Found no registry files in HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x64\vulkan_dzn.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x86\vulkan_dzn.dll
+[Vulkan Loader] INFO:           loader_parse_icd_manifest: Driver library architecture doesn't match the current running architecture, skipping this driver
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json, version 1.0.0
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\igvk64.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\nvoglv64.dll
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           No valid vk_loader_settings.json file found, no loader settings will be active
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] DRIVER:         Searching for driver manifest files
+[Vulkan Loader] DRIVER:            In following locations:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] DRIVER:            Found the following files:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] DRIVER:         Checking for Driver Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json" from PnP registry: E
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] DRIVER:         Found no registry files in HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x64\vulkan_dzn.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x86\vulkan_dzn.dll
+[Vulkan Loader] INFO:           loader_parse_icd_manifest: Driver library architecture doesn't match the current running architecture, skipping this driver
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json, version 1.0.0
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\igvk64.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\nvoglv64.dll
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           No valid vk_loader_settings.json file found, no loader settings will be active
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] DRIVER:         Searching for driver manifest files
+[Vulkan Loader] DRIVER:            In following locations:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] DRIVER:            Found the following files:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] DRIVER:         Checking for Driver Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json" from PnP registry: E
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] DRIVER:         Found no registry files in HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x64\vulkan_dzn.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x86\vulkan_dzn.dll
+[Vulkan Loader] INFO:           loader_parse_icd_manifest: Driver library architecture doesn't match the current running architecture, skipping this driver
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json, version 1.0.0
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\igvk64.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\nvoglv64.dll
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           vkCreateInstance: applicationName: "Vulkan Test Application", applicationVersion: 4096, engineName: "Vulkan Test Application", engineVersion: 4096, apiVersion: 1.3.0
+[Vulkan Loader] INFO:           vkCreateInstance: Requested 1 instance layer(s):
+[Vulkan Loader] INFO:              VK_LAYER_KHRONOS_validation
+[Vulkan Loader] INFO:           vkCreateInstance: Requested 6 instance extension(s):
+[Vulkan Loader] INFO:              VK_KHR_surface
+[Vulkan Loader] INFO:              VK_KHR_win32_surface
+[Vulkan Loader] INFO:              VK_KHR_get_surface_capabilities2
+[Vulkan Loader] INFO:              VK_EXT_surface_maintenance1
+[Vulkan Loader] INFO:              VK_EXT_debug_utils
+[Vulkan Loader] INFO:              VK_EXT_validation_features
+[Vulkan Loader] INFO:           No valid vk_loader_settings.json file found, no loader settings will be active
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] LAYER:                C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files\RenderDoc\renderdoc.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\ProgramData\obs-studio-hook\obs-vulkan64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json" from registry "HKEY_CURRENT_USER\SOFTWARE\Khronos\Vulkan\ImplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json (file version 1.0.1)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files\RenderDoc\renderdoc.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\ProgramData\obs-studio-hook\obs-vulkan64.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamOverlayVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Steam\SteamFossilizeVulkanLayer64.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json (file version 1.1.2)
+[Vulkan Loader] INFO:           Found manifest file C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json (file version 1.1.2)
+[Vulkan Loader] LAYER:          Searching for explicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:             Found no files
+[Vulkan Loader] LAYER:          Checking for Layer Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers
+[Vulkan Loader] INFO | LAYER:   windows_get_device_registry_files: opening device PCI\VEN_8086&DEV_A780&SUBSYS_88821043&REV_04\3&11583659&0&10
+[Vulkan Loader] INFO | DRIVER:  windows_get_device_registry_entry: Device ID(2) Does not contain a value for "VulkanExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   windows_get_device_registry_files: Opening child device 4 - DISPLAY\GSM5BD2\4&22710F2D&0&UID20530
+[Vulkan Loader] DEBUG | LAYER:  windows_get_device_registry_files: GUID for 4 is not SoftwareComponent skipping
+[Vulkan Loader] INFO | LAYER:   windows_get_device_registry_files: opening device PCI\VEN_10DE&DEV_2786&SUBSYS_88ED1043&REV_A1\4&256a0aa8&0&0008
+[Vulkan Loader] INFO | DRIVER:  windows_get_device_registry_entry: Device ID(1) Does not contain a value for "VulkanExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   windows_get_device_registry_files: unable to open child-device error:13
+[Vulkan Loader] LAYER:          windows_get_device_registry_files: found no registry files
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_api_dump.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_gfxreconstruct.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_synchronization2.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_monitor.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_screenshot.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_profiles.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_shader_object.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO | LAYER:   Located json file "C:\VulkanSDK\1.4.357.0\Bin\VkLayer_crash_diagnostic.json" from registry "HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\ExplicitLayers"
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_api_dump.json (file version 1.2.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_gfxreconstruct.json (file version 1.2.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_synchronization2.json (file version 1.2.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.json (file version 1.2.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_monitor.json (file version 1.0.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_screenshot.json (file version 1.2.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_profiles.json (file version 1.2.1)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_shader_object.json (file version 1.2.0)
+[Vulkan Loader] INFO:           Found manifest file C:\VulkanSDK\1.4.357.0\Bin\VkLayer_crash_diagnostic.json (file version 1.2.0)
+[Vulkan Loader] WARNING:        Removing layer VK_LAYER_EOS_Overlay (C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win64.json) because it is a duplicate of VK_LAYER_EOS_Overlay (C:\Program Files (x86)\Epic Games\Launcher\Portal\Extras\Overlay\EOSOverlayVkLayer-Win32.json)
+[Vulkan Loader] DRIVER:         Searching for driver manifest files
+[Vulkan Loader] DRIVER:            In following locations:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe
+[Vulkan Loader] DRIVER:            Found the following files:
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json
+[Vulkan Loader] DRIVER:               C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json
+[Vulkan Loader] DRIVER:         Checking for Driver Manifest files in Registry at HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json" from PnP registry: E
+[Vulkan Loader] INFO:           windows_add_json_entry: Located json file "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json" from PnP registry: E
+[Vulkan Loader] DRIVER:         Found no registry files in HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x64\vulkan_dzn.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\Program Files\WindowsApps\Microsoft.D3DMappingLayers_1.2608.3.0_x64__8wekyb3d8bbwe\dzn_icd.x86.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named x86\vulkan_dzn.dll
+[Vulkan Loader] INFO:           loader_parse_icd_manifest: Driver library architecture doesn't match the current running architecture, skipping this driver
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_68fe65fbc646d3a4\igvk64.json, version 1.0.0
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\igvk64.dll
+[Vulkan Loader] DRIVER:         Found ICD manifest file C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json, version 1.0.1
+[Vulkan Loader] DEBUG | DRIVER: Searching for ICD drivers named .\nvoglv64.dll
+[Vulkan Loader] DEBUG | LAYER:  Loading layer library C:\VulkanSDK\1.4.357.0\Bin\.\VkLayer_khronos_validation.dll
+[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_KHRONOS_validation" (C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.dll)
+[Vulkan Loader] DEBUG | LAYER:  Loading layer library C:\ProgramData\obs-studio-hook\.\graphics-hook64.dll
+[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_OBS_HOOK" (C:\ProgramData\obs-studio-hook\graphics-hook64.dll)
+[Vulkan Loader] DEBUG | LAYER:  Loading layer library C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\.\nvoglv64.dll
+[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_NV_present" (C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll)
+[Vulkan Loader] DEBUG | LAYER:  Loading layer library C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\.\nvoglv64.dll
+[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_NV_optimus" (C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll)
+[Vulkan Loader] LAYER:          vkCreateInstance layer callstack setup to:
+[Vulkan Loader] LAYER:             <Application>
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             <Loader>
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_NV_optimus
+[Vulkan Loader] LAYER:                     Type: Implicit
+[Vulkan Loader] LAYER:                     Enabled By: Implicit Layer
+[Vulkan Loader] LAYER:                         Disable Env Var:  DISABLE_LAYER_NV_OPTIMUS_1
+[Vulkan Loader] LAYER:                     Manifest: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json
+[Vulkan Loader] LAYER:                     Library:  C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_NV_present
+[Vulkan Loader] LAYER:                     Type: Implicit
+[Vulkan Loader] LAYER:                     Enabled By: Implicit Layer
+[Vulkan Loader] LAYER:                         Disable Env Var:  DISABLE_LAYER_NV_PRESENT_1
+[Vulkan Loader] LAYER:                     Manifest: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json
+[Vulkan Loader] LAYER:                     Library:  C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_OBS_HOOK
+[Vulkan Loader] LAYER:                     Type: Implicit
+[Vulkan Loader] LAYER:                     Enabled By: Implicit Layer
+[Vulkan Loader] LAYER:                         Disable Env Var:  DISABLE_VULKAN_OBS_CAPTURE
+[Vulkan Loader] LAYER:                     Manifest: C:\ProgramData\obs-studio-hook\obs-vulkan64.json
+[Vulkan Loader] LAYER:                     Library:  C:\ProgramData\obs-studio-hook\graphics-hook64.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_KHRONOS_validation
+[Vulkan Loader] LAYER:                     Type: Explicit
+[Vulkan Loader] LAYER:                     Enabled By: By the Application
+[Vulkan Loader] LAYER:                     Manifest: C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.json
+[Vulkan Loader] LAYER:                     Library:  C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             <Drivers>
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkCreateIOSSurfaceMVK
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkCreateMacOSSurfaceMVK
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkCreateMetalSurfaceEXT
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkCreateWaylandSurfaceKHR
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkCreateXcbSurfaceKHR
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkCreateXlibSurfaceKHR
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkGetInstanceProcAddrLUNARG
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkGetPhysicalDeviceWaylandPresentationSupportKHR
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkGetPhysicalDeviceXcbPresentationSupportKHR
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkGetPhysicalDeviceXlibPresentationSupportKHR
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkExportMetalObjectsEXT
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkGetMemoryMetalHandleEXT
+[Vulkan Loader] DEBUG:          loader_gpdpa_instance_terminator() unrecognized name vkGetMemoryMetalHandlePropertiesEXT
+Vulkan adapter: name=NVIDIA GeForce RTX 4070, PCI ID=10de:2786, type=DISCRETE_GPU
+Vulkan adapter API: 1.4.325; driver: id=NVIDIA_PROPRIETARY, name=NVIDIA, info=591.86, raw_version=0x93d58000
+Vulkan adapter Windows LUID: 00000000:0000fb9a; node_mask=0x00000001; raw=9afb000000000000
+[Vulkan Loader] INFO | LAYER:   Inserted device layer "VK_LAYER_KHRONOS_validation" (C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.dll)
+[Vulkan Loader] INFO | LAYER:   Inserted device layer "VK_LAYER_OBS_HOOK" (C:\ProgramData\obs-studio-hook\graphics-hook64.dll)
+[Vulkan Loader] INFO | LAYER:   Inserted device layer "VK_LAYER_NV_present" (C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll)
+[Vulkan Loader] INFO | LAYER:   Inserted device layer "VK_LAYER_NV_optimus" (C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll)
+[Vulkan Loader] DRIVER:         vkCreateDevice layer callstack setup to:
+[Vulkan Loader] DRIVER:            <Application>
+[Vulkan Loader] DRIVER:              ||
+[Vulkan Loader] DRIVER:            <Loader>
+[Vulkan Loader] DRIVER:              ||
+[Vulkan Loader] LAYER:             VK_LAYER_NV_optimus
+[Vulkan Loader] LAYER:                     Type: Implicit
+[Vulkan Loader] LAYER:                     Enabled By: Implicit Layer
+[Vulkan Loader] LAYER:                         Disable Env Var:  DISABLE_LAYER_NV_OPTIMUS_1
+[Vulkan Loader] LAYER:                     Manifest: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json
+[Vulkan Loader] LAYER:                     Library:  C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_NV_present
+[Vulkan Loader] LAYER:                     Type: Implicit
+[Vulkan Loader] LAYER:                     Enabled By: Implicit Layer
+[Vulkan Loader] LAYER:                         Disable Env Var:  DISABLE_LAYER_NV_PRESENT_1
+[Vulkan Loader] LAYER:                     Manifest: C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nv-vk64.json
+[Vulkan Loader] LAYER:                     Library:  C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_OBS_HOOK
+[Vulkan Loader] LAYER:                     Type: Implicit
+[Vulkan Loader] LAYER:                     Enabled By: Implicit Layer
+[Vulkan Loader] LAYER:                         Disable Env Var:  DISABLE_VULKAN_OBS_CAPTURE
+[Vulkan Loader] LAYER:                     Manifest: C:\ProgramData\obs-studio-hook\obs-vulkan64.json
+[Vulkan Loader] LAYER:                     Library:  C:\ProgramData\obs-studio-hook\graphics-hook64.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_KHRONOS_validation
+[Vulkan Loader] LAYER:                     Type: Explicit
+[Vulkan Loader] LAYER:                     Enabled By: By the Application
+[Vulkan Loader] LAYER:                     Manifest: C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.json
+[Vulkan Loader] LAYER:                     Library:  C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.dll
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] DRIVER:            <Device>
+[Vulkan Loader] DRIVER:                Using "NVIDIA GeForce RTX 4070" with driver: "C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll"
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 0 (VkImage 0x60000000006 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 2 (VkImage 0x80000000008 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 0 (VkImage 0x60000000006 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 2 (VkImage 0x80000000008 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 1 (VkImage 0x70000000007 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 0 (VkImage 0x60000000006 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 2 (VkImage 0x80000000008 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 0 (VkImage 0x60000000006 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 2 (VkImage 0x80000000008 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+Vulkan validation: (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+vkQueuePresentKHR(): PRESENT_AFTER_WRITE hazard detected. vkQueuePresentKHR presents swapchain image 1 (VkImage 0x70000000007 from VkSwapchainKHR 0x50000000005), which was previously written during an image layout transition initiated by vkCmdPipelineBarrier. 
+No sufficient synchronization is present to ensure that a swapchain present operation does not conflict with a prior layout transition.
+[Vulkan Loader] DEBUG | LAYER:  Unloading layer library C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll
+[Vulkan Loader] DEBUG | LAYER:  Unloading layer library C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispig.inf_amd64_f4c7a2fd13e0f763\nvoglv64.dll
+[Vulkan Loader] DEBUG | LAYER:  Unloading layer library C:\ProgramData\obs-studio-hook\graphics-hook64.dll
+[Vulkan Loader] DEBUG | LAYER:  Unloading layer library C:\VulkanSDK\1.4.357.0\Bin\VkLayer_khronos_validation.dll

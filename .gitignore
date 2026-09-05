@@ -1,6 +1,8 @@
 # Exclude everything
 /*
 
+!patches
+
 # Except for default project files
 !/.github
 !/build-aux
@@ -31,6 +33,7 @@
 !CODESTYLE.md
 !COPYING
 !INSTALL
+!README.md
 !README.rst
 
 # Exclude lock files
